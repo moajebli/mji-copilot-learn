@@ -7,13 +7,13 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@v8
-      with:
-        script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "🎉 You've created this issue comment using GitHub Script!!!"
-            })
+      - uses: actions/github-script@v8
+        with:
+          script: |
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "🎉 You've created this issue comment using GitHub Script!!!"
+              })
             
